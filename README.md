@@ -1,4 +1,4 @@
-#GRME
+# GRME
 Platform where users can check their attractiveness and improve it on daily basis with routines and personalized tips.
 
 © 2025 Keshav Pandey. All rights reserved.
