@@ -1,0 +1,416 @@
+/* Global text color fix - make all text white by default */
+body, p, h1, h2, h3, h4, h5, h6, span, div, li, a, label, small {
+  color: white !important;
+}
+
+/* Make text in specific containers white */
+.navbar, .sidebar, .footer, .header, main, section, article, aside, .container {
+  color: white !important;
+}
+
+/* Make text in specific elements white */
+.text-primary, .text-secondary, .text-muted, .text-dark, 
+.text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Make text on light backgrounds black and ALWAYS visible (not just on hover) */
+.bg-white *, .bg-light *, .bg-secondary *, .card *, 
+[class*="bg-light"] *, [class*="bg-white"] * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make buttons on white backgrounds always visible */
+.bg-white button, .bg-light button, .card button,
+[class*="bg-light"] button, [class*="bg-white"] button,
+.bg-white .btn, .bg-light .btn, .card .btn,
+[class*="bg-light"] .btn, [class*="bg-white"] .btn {
+  color: black !important;
+  border-color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make inputs on white backgrounds always visible */
+.bg-white input, .bg-light input, .card input,
+[class*="bg-light"] input, [class*="bg-white"] input,
+.bg-white textarea, .bg-light textarea, .card textarea,
+[class*="bg-light"] textarea, [class*="bg-white"] textarea,
+.bg-white select, .bg-light select, .card select,
+[class*="bg-light"] select, [class*="bg-white"] select {
+  color: black !important;
+  border-color: #333 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make text in forms always visible */
+form label, form p, form span, form div, form h1, form h2, form h3, form h4, form h5, form h6 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix text on login/signup pages */
+.auth-form, .auth-form *, .login-form, .login-form *, .signup-form, .signup-form * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make links always visible */
+a, a:link, a:visited, a:hover, a:active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for hover-only visibility issues */
+*:not(:hover) {
+  opacity: inherit !important;
+  visibility: inherit !important;
+}
+
+/* Make Google sign-in button black with white text */
+.google-sign-in, [class*="google-sign"], [class*="google-btn"] {
+  background-color: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make primary buttons white with black text */
+.btn-primary, .button-primary, [class*="btn-primary"], [class*="button-primary"] {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for any remaining hover-only visibility issues */
+*:not(:hover) > * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Exception: Make text in dark buttons white */
+button.bg-dark, button.bg-black, button.bg-primary,
+.btn-dark, .btn-black, .btn-primary {
+  color: white !important;
+}
+
+/* Fix for inputs */
+input, select, textarea {
+  color: black !important;
+  background-color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for links */
+a, a:hover, a:focus, a:active {
+  color: rgba(255, 255, 255, 0.9) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for specific components */
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+/* Fix for landing page */
+.landing-page *, .hero-section * {
+  color: white !important;
+}
+
+/* Fix for headings in cards */
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in tables */
+table, th, td {
+  color: white !important;
+}
+
+/* Fix for form labels */
+label {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for auth pages */
+.auth-layout * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for auth page inputs */
+.auth-layout input, .auth-layout select, .auth-layout textarea {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for auth page buttons */
+.auth-layout button[type="submit"] {
+  background-color: white !important;
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.auth-layout button:not([type="submit"]) {
+  background-color: black !important;
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for specific elements */
+.btn-secondary {
+  background-color: black !important;
+  color: white !important;
+  border-color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in modals */
+.modal-content * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in dropdowns */
+.dropdown-menu * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in alerts */
+.alert * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in badges */
+.badge {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in toasts */
+.toast * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in tooltips */
+.tooltip * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in popovers */
+.popover * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in breadcrumbs */
+.breadcrumb * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in pagination */
+.pagination * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in list groups */
+.list-group-item {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in navs */
+.nav-tabs *, .nav-pills * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in progress bars */
+.progress-bar * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in spinners */
+.spinner-border, .spinner-grow {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in jumbotron */
+.jumbotron * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in media objects */
+.media * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in carousel */
+.carousel-caption * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in accordion */
+.accordion * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in collapse */
+.collapse * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in embed */
+.embed-responsive * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in figure */
+.figure * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in form */
+.form-control {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in input group */
+.input-group * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom control */
+.custom-control-label {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom select */
+.custom-select {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom file */
+.custom-file-label {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom range */
+.custom-range {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom checkbox */
+.custom-checkbox * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom radio */
+.custom-radio * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom switch */
+.custom-switch * {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom file */
+.custom-file * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for text in custom select */
+.custom-select * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix specifically for login/register pages */
+form input, form button, form label, form a {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Additional fix for text on white backgrounds */
+[style*="background-color: white"] *, 
+[style*="background: white"] *,
+[style*="background-color: #fff"] *, 
+[style*="background: #fff"] * {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+} 

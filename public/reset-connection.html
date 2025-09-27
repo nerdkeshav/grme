@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRME Connection Reset</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #e65100;
+    }
+    button {
+      background-color: #e65100;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #d84315;
+    }
+    .log {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      font-family: monospace;
+      height: 150px;
+      overflow-y: auto;
+      margin-top: 20px;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>GRME Connection Reset Tool</h1>
+  
+  <div class="card">
+    <h2>What This Does</h2>
+    <p>
+      This tool will reset your connection state with the GRME application by:
+    </p>
+    <ul>
+      <li>Clearing cached authentication data</li>
+      <li>Removing stored connection information</li>
+      <li>Resetting any offline markers</li>
+      <li>Forcing a complete reconnection</li>
+    </ul>
+    <p>
+      <strong>Note:</strong> You may need to log in again after this process.
+    </p>
+  </div>
+  
+  <div class="card">
+    <h2>Reset Connection</h2>
+    <p>Click the button below to reset your connection:</p>
+    <button id="reset-button">Reset Connection State</button>
+    <div class="log" id="log"></div>
+  </div>
+  
+  <script>
+    // Log function
+    function log(message, type) {
+      const logElement = document.getElementById('log');
+      const entry = document.createElement('div');
+      entry.textContent = message;
+      if (type) {
+        entry.classList.add(type);
+      }
+      logElement.appendChild(entry);
+      logElement.scrollTop = logElement.scrollHeight;
+    }
+    
+    // Reset button handler
+    document.getElementById('reset-button').addEventListener('click', function() {
+      log('Starting connection reset...');
+      
+      try {
+        // Load and execute the reset script
+        const script = document.createElement('script');
+        script.src = 'reset-connection.js';
+        script.onerror = function() {
+          log('Error loading reset script', 'error');
+          log('Trying alternative method...');
+          
+          // Fallback to manual reset
+          try {
+            const keysToRemove = [];
+            
+            for (let i = 0; i < localStorage.length; i++) {
+              const key = localStorage.key(i);
+              if (key && (
+                key.includes('supabase') || 
+                key.includes('sb-') ||
+                key.includes('connection') ||
+                key.includes('auth') ||
+                key.includes('offline')
+              )) {
+                keysToRemove.push(key);
+              }
+            }
+            
+            log('Removing ' + keysToRemove.length + ' cached items');
+            keysToRemove.forEach(key => {
+              log('- Removing: ' + key);
+              localStorage.removeItem(key);
+            });
+            
+            // Also clear session storage
+            sessionStorage.clear();
+            
+            log('Storage cleared - connection state reset', 'success');
+            log('Reloading page in 2 seconds...');
+            
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          } catch (err) {
+            log('Manual reset failed: ' + err.message, 'error');
+          }
+        };
+        
+        document.body.appendChild(script);
+      } catch (err) {
+        log('Reset failed: ' + err.message, 'error');
+      }
+    });
+    
+    // Initial log message
+    log('Ready to reset connection state');
+  </script>
+</body>
+</html>
